@@ -26,5 +26,9 @@ int main(void)
     String str6;
     cin >> str6;
 
+    cout << __LINE__ << endl
+         << __FILE__ << endl
+         << __FUNCTION__ << endl;
+
     return 0;
 }
