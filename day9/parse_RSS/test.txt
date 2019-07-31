@@ -1,0 +1,45 @@
+50年前的登月程序和程序员有多硬核
+https://coolshell.cn/articles/19612.html
+2019年7月20日，是有纪念意义的一天，这天不是因为广大网民帮周杰伦在新浪微博上的超话刷到第一，而是阿波罗登月的50周年的纪念日。早在几年前，在Github上...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/19612.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+如何超过大多数人
+https://coolshell.cn/articles/19464.html
+当你看到这篇文章的标题，你一定对这篇文章产生了巨大的兴趣，因为你的潜意识在告诉你，这是一本人生的“武林秘籍”，而且还是左耳朵写的，一定有干货满满，只要读完，一定...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/19464.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+HTTP API 认证授权术
+https://coolshell.cn/articles/19395.html
+我们知道，HTTP是无状态的，所以，当我们需要获得用户是否在登录的状态时，我们需要检查用户的登录状态，一般来说，用户的登录成功后，服务器会发一个登录凭证（又被叫...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/19395.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+StackOverflow 2019 程序员调查
+https://coolshell.cn/articles/19307.html
+前些天，StackOverflow 发布了 2019年的年度程序员调查，这个调查报查有90000名程序员参与，这份调度报告平均花了20分钟，可见，这份报告有很多...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/19307.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+“努力就会成功”
+https://coolshell.cn/articles/19271.html
+那一年，我加入了某知名公司的某知名部门，在办公室中，我看到了到处都挂着——“努力就会成功”的条幅，这个部门中大多数员工的邮件签名都会有“努力就会成功”，我感到一...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/19271.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+打造高效的工作环境 – Shell 篇
+https://coolshell.cn/articles/19219.html
+注：本文由雷俊(Javaer/Emacser)和我一起编辑，所以文章版权归雷俊与我共同所有，转载者必需注明出处和我们两位作者。原文最早发于酷壳微信公众号，后来我...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/19219.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+谈谈我的“三观”
+https://coolshell.cn/articles/19085.html
+也许是人到了四十多了，敢写这么大的命题，我也醉了，不过，我还是想把我的想法记录下来，算是对我思考的一个snapshot，给未来的我看看，要么被未来的我打脸，要么...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/19085.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+记一次Kubernetes/Docker网络排障
+https://coolshell.cn/articles/18654.html
+昨天周五晚上，临下班的时候，用户给我们报了一个比较怪异的Kubernetes集群下的网络不能正常访问的问题，让我们帮助查看一下，我们从下午5点半左右一直跟进到晚...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/18654.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+程序员练级攻略（2018)  与我的专栏
+https://coolshell.cn/articles/18360.html
+写极客时间8个月了，我的专栏现在有一定的积累了，今天想自己推荐一下。因为最新的系列《程序员练级攻略（2018）版》正在连载中，而且文章积累量到了我也有比较足的自...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/18360.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+关于我”极客时间“的专栏
+https://coolshell.cn/articles/18246.html
+不少朋友都知道我在“极客时间”上开了一个收费专栏，这个专栏会开设大约一年的时间，一共会发布104篇文章。现在，我在上面以每周两篇文章的频率已发布了27篇文章了，...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/18246.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+Go语言、Docker 和新技术
+https://coolshell.cn/articles/18190.html
+上个月，作为 Go 语言的三位创始人之一，Unix 老牌黑客罗勃·派克（Rob Pike）在新文章“Go: Ten years and climbing”中，回...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/18190.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+关于Facebook 的 React 专利许可证
+https://coolshell.cn/articles/18140.html
+随着Apache、百度、Wordpress都在和Facebook的React.js以及其专利许可证划清界限，似乎大家又在讨论Facebook的这个BSD+PAT...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/18140.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+如何免费的让网站启用HTTPS
+https://coolshell.cn/articles/18094.html
+今天，我把CoolShell变成https的安全访问了。我承认这件事有点晚了，因为之前的HTTP的问题也有网友告诉我，被国内的电信运营商在访问我的网站时加入了一...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/18094.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+API设计原则 – Qt官网的设计实践总结
+https://coolshell.cn/articles/18024.html
+（感谢好友 @李鼎 翻译此文） 原文链接：API Design Principles &#8211; Qt Wiki 基于Gary的影响力上 Gary Gao ...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/18024.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+Linux PID 1 和 Systemd
+https://coolshell.cn/articles/17998.html
+要说清 Systemd，得先从Linux操作系统的启动说起。Linux 操作系统的启动首先从 BIOS 开始，然后由 Boot Loader 载入内核，并初始化...<p class="read-more"><a class="btn btn-default" href="https://coolshell.cn/articles/17998.html"> Read More<span class="screen-reader-text">  Read More</span></a></p>

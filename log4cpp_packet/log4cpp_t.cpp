@@ -8,7 +8,7 @@
 
 using namespace log4cpp;
 
-Mylogger * Mylogger::_ptr = nullptr;
+Mylogger * Mylogger::_ptr = Mylogger::getInstance();            //饿汉模式，保证是线程安全的
 				
 Mylogger::Mylogger()
 : _category(Category::getRoot().getInstance("category"))
@@ -41,6 +41,7 @@ Mylogger * Mylogger::getInstance(void)
     if (_ptr == nullptr)
     {
         _ptr = new Mylogger();
+        ::atexit(destroy);
     }
             
     return _ptr;

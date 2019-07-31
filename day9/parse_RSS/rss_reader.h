@@ -14,7 +14,7 @@ struct Rss_item
 {
     string title;
     string link;
-    string descripton;
+    string description;
     string content;
 };
 
