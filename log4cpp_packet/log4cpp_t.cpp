@@ -2,6 +2,7 @@
 #include <log4cpp/PatternLayout.hh>
 #include <log4cpp/FileAppender.hh>
 #include <log4cpp/Category.hh>
+#include <cstdlib>
 
 #include "log4cpp_t.h"
 
@@ -73,3 +74,4 @@ void Mylogger::info(const char * msg)
 {
     _category.info(msg);
 }
+

@@ -1,5 +1,8 @@
 #include <limits>
+#include <vector>
 #include "string_t.h"
+
+using std::vector;
 
  //拷贝构造函数
 String & String::operator=(const String & rhs)         
@@ -141,10 +144,15 @@ std::ostream & operator<<(std::ostream & o_stream, const String & rhs)
 //重载>>运算符函数
 std::istream & operator>>(std::istream & i_stream, String & rhs)
 {
-    rhs._pstr = new char[256]();            //这样做太愚蠢，需要改进
+    vector<char> vec;
+    vec.reserve(65536);
     
+    char ch = 0;
+    while((ch = i_stream.get()) != '\n')
+        vec.push_back(ch);
     
-    i_stream >> rhs._pstr;
+    rhs = &vec[0];
+    
     return i_stream;
 }
 
