@@ -18,7 +18,6 @@ private:
 
         char & operator=(const char & ch)
         {
-            
             if (_index >= 0 && _index < _self.size())           //嵌套类可以使用外部类定义的所有成员
             {
                 cout << "Char_proxy: char & operator=(const char & ch)" << endl;
