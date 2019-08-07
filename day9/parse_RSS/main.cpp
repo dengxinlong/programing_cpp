@@ -8,6 +8,7 @@ int main(void)
 {
     Rss_reader test;
     test.parse_rss();
+    test.dump("text");
 
 
     return 0;

@@ -41,6 +41,7 @@ private:
     {
         cout << "Singleton()" << endl;
     }
+    
     ~Singleton()
     {
         cout << "~Singleton()" << endl;
