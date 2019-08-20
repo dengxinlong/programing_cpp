@@ -1,0 +1,62 @@
+
+#include "mutexlock_t.h"
+#include "condition_t.h"
+#include <queue>
+/*
+Task_queue::Task_queue(size_t size)
+: _size(size)
+, _mutex()
+, _not_full(_mutex)
+, _not_empty(_mutex)
+{}*/
+
+template <class T>
+Task_queue<T>::Task_queue(size_t size)
+: _size(size)
+, _mutex()
+, _cond(_mutex)
+{}
+
+template <class T>
+bool Task_queue<T>::empty(void) const
+{
+    return _que.size() == 0;
+}
+
+template <class T>
+bool Task_queue<T>::full(void) const
+{
+    return _que.size() == _size;
+}
+
+template <class T>
+void Task_queue<T>::push(T elem)
+{
+    Mutex_lock_guard autolock(_mutex);
+    while (full())
+    {
+        _cond.wait();
+    }
+
+    _que.push(elem);
+
+    _cond.notify();
+}
+
+template <class T>
+T Task_queue<T>::pop(void)
+{
+    Mutex_lock_guard autolock(_mutex);
+
+    while (empty())
+    {
+        _cond.wait();
+    }
+
+    int elem = _que.front();
+    _que.pop();
+
+    _cond.notify();
+
+    return elem;
+}

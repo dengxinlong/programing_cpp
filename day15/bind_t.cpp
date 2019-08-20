@@ -70,6 +70,7 @@ void test2(void)
     Example examp;
     //bind是一个函数模板，返回一个函数对象
     func_cont = std::bind(&Example::display, examp);
+    //func_cont = std::bind(&Example::display);
     func_cont();
 }
 
@@ -134,8 +135,8 @@ int main(void)
 {
     //test0();
     //test1();
-    //test2();
-    test4();
+    test2();
+    //test4();
 
 
     return 0; 
