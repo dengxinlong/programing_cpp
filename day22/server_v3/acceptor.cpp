@@ -69,5 +69,4 @@ void Acceptor::listen(void)
         perror("listen");
         exit(-1);
     }
-    cout << "listen..............\n";
 }

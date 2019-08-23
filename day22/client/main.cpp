@@ -51,9 +51,11 @@ void do_server(int sfd)
     char sendbuf[1024] = {0};
     while (1)           //循环发送以及接收server端的数据
     {
+        cout << ">>please enter msg: ";
         fgets(sendbuf, sizeof(sendbuf), stdin);
-        write(sfd, sendbuf, sizeof(sendbuf));
-
+        int ret = write(sfd, sendbuf, strlen(sendbuf));
+        //cout << "ret = " << ret << endl;
+        //cout << "sizeof(sendbuf) is " << sizeof(sendbuf) << endl;
         int read_n = read(sfd, recvbuf, sizeof(recvbuf));
         if (read_n == -1)
         {

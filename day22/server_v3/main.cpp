@@ -1,6 +1,7 @@
 #include "acceptor.h"
 #include "tcp_connection.h"
 #include "event_loop.h"
+#include "tcp_server.h"
 
 #include <functional>
 #include <memory>
@@ -33,14 +34,11 @@ void on_close(const Tcp_connection_ptr & conn)
 
 int main(void)
 {
-    Acceptor acceptor("192.168.5.90", 6666);
-    acceptor.ready();
-
-    Event_loop loop(acceptor);
-    loop.set_connection_callback(on_connection);
-    loop.set_massage_callback(on_massage);
-    loop.set_close_callback(on_close);
-    loop.loop();
+    Tcp_server tcp_server("192.168.5.90", 6666);
+    tcp_server.set_connection_callback(on_connection);
+    tcp_server.set_massage_callback(on_massage);
+    tcp_server.set_close_callback(on_close);
+    tcp_server.start();
 
 
     return 0;
