@@ -5,12 +5,6 @@
 using std::cout;
 using std::endl;
 
-Thread_t::Thread_t(Thread_callback && callback)
-: _pthid(0)
-, _is_running(false)
-, _callback(std::move(callback))
-{}
-
 Thread_t::~Thread_t()
 {
     if (_is_running)
@@ -23,8 +17,9 @@ Thread_t::~Thread_t()
 
 void Thread_t::start(void)
 {
-    _is_running = true;
     pthread_create(&_pthid, nullptr, thread_handle, this);
+    _is_running = true;
+
 }
 void Thread_t::join(void)
 {
@@ -39,7 +34,8 @@ void * Thread_t::thread_handle(void * ptr)
 {
     Thread_t * pthread = static_cast<Thread_t *>(ptr);
     if (pthread)
-        pthread->_callback();
+        pthread->run();
+
     pthread_exit(nullptr);
 }
 
