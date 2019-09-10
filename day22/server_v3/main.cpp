@@ -38,7 +38,8 @@ int main(void)
     tcp_server.set_connection_callback(on_connection);
     tcp_server.set_massage_callback(on_massage);
     tcp_server.set_close_callback(on_close);
-    tcp_server.start();
+    tcp_server.start();         //开始tcp连接后则没办法停止，因为其中的epoll机制中的epoll_wait是循环，
+                                //必须使用线程池，在主线程中使得epoll_wait退出循环，主线程终止，进程终止
 
 
     return 0;

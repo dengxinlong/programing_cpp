@@ -1,0 +1,5 @@
+ip 192.168.4.90
+port 6666
+English_path ./linguistic_data/english.txt
+English_dict_path ../data/dict_en_dict
+Index_file ../data/index_file

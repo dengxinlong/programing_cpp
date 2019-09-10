@@ -1,0 +1,29 @@
+#include "config.h"
+#include "dict_producer.h"
+
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+int main(void)
+{
+    Config conf("./config");
+    map<string, string> conf_map = conf.get_conf_map();
+
+    Dict_producer dict_producer(conf_map["English_path"]);
+    dict_producer.build_en_dict();
+    dict_producer.store_dict(conf_map["English_dict_path"]);
+#if 0
+    dict_producer.show_dict();
+#endif
+    dict_producer.store_word_to_dict("zoo");
+#if 0
+    cout << "end of add zoo\n";
+    dict_producer.show_dict();
+    cout << "----------------index_file-------------\n";
+#endif
+    dict_producer.build_index_file(conf_map["Index_file"]);
+
+    return 0;
+}

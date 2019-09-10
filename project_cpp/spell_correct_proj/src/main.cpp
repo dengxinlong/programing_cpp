@@ -4,6 +4,9 @@
 #include "task.h"
 #include "tcp_connection.h"
 #include "tcp_server.h"
+#include "config.h"
+#include "dict_producer.h"
+#include "mytask.h"
 
 #include <stdlib.h>
 #include <time.h>
@@ -23,36 +26,7 @@ using Tcp_connection_ptr =std::shared_ptr<Tcp_connection>;
 Thread_pool * gthread_pool_ptr = nullptr;
 
 
-class Mytask
-: public Task
-{
-public:
-    Mytask(const string & msg, const Tcp_connection_ptr & conn)
-    : _msg(msg)
-    , _conn(conn)
-    {}
 
-    //这个任务由线程池中的线程来完成
-    void process(void) override
-    {
-        //deal with _msg
-        //decode
-        //compute
-        //encode
-       // cout << "main: process\n";
-        string response_str = _msg;
-        //_msg.append("ddd");
-        response_str.append(std::to_string(pthread_self()));
-        //_conn->send(response_str); //这里由线程池中的子线程来完成数据的发送工作(应由主线程[IO线程]完成)，这样设计是不合理的
-                                    //数据的发送工作应该由主线程(io线程)来完成
-                                    //将send函数的执行延迟到io线程来完成
-        _conn->send_in_loop(response_str);            //把io操作交给io线程来完成
-    }   
-
-private:
-    string _msg;
-    const Tcp_connection_ptr _conn;
-};
 
 
 void on_connection(const Tcp_connection_ptr & conn)
@@ -90,12 +64,38 @@ int main(void)
     thread_pool.start();
     gthread_pool_ptr = &thread_pool;
 
-    Tcp_server server("192.168.3.90", 6666);
+    Config conf("./config");                        //读取配置文件
+    map<string, string> conf_map = conf.get_conf_map();
+
+    Dict_producer dict_producer(conf_map["English_path"]);
+    dict_producer.build_en_dict();
+    dict_producer.store_dict(conf_map["English_dict_path"]);
+    dict_producer.build_index_file(conf_map["Index_file"]);
+
+    Tcp_server server(conf_map["ip"], (unsigned short)stoi(conf_map["port"]));   //TCP连接
+
     server.set_connection_callback(on_connection);
     server.set_massage_callback(on_massage);
     server.set_close_callback(on_close);
     server.start();
 
+   
+
+/*
+    Dict_producer dict_producer(conf_map["English_path"]);
+    dict_producer.build_en_dict();
+    dict_producer.store_dict(conf_map["English_dict_path"]);
+#if 0
+    dict_producer.show_dict();
+#endif
+    dict_producer.store_word_to_dict("zoo");
+#if 0
+    cout << "end of add zoo\n";
+    dict_producer.show_dict();
+    cout << "----------------index_file-------------\n";
+#endif
+    dict_producer.build_index_file(conf_map["Index_file"]);
+*/
 
     thread_pool.stop();
 
